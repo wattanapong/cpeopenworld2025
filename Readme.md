@@ -1,4 +1,4 @@
-# Demonstration of dual network interfaces simultaneously
+# The demonstration in connecting dual network interfaces simultaneously
 1. local server
 ```
 npm i 
