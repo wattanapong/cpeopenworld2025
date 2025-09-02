@@ -17,16 +17,21 @@
       text-align: center;
       font-size: 24px;
       font-weight: bold;
-      background-color: #f2f2f2;
+      background-color: #faf880;
     }
   </style>
 </head>
 <body>
   <h1 style="text-align:center;">CPE Blocks</h1>
   <div class="grid">
-    <% for (let i = 1; i <= 8; i++) { %>
-      <% if (ids && ids.includes("CPE#" + i)) { %>
-        <div class="block">CPE#<%= i %></div>
+    <% for (let i = 0; i <= ids.length; i++) { %>
+      <% if ((ids[i]+"").includes("CPE#")) { %>
+        <div class="block"><%= ids[i] %>
+          <% for (let j = 0; j < data[ids[i]].length; j++) { %>
+            <p style="font-size: 0.7em;">IP:<span style="color: blue;"><%= data[ids][j]['ip'] %> </span>
+             Time: <span style="color: blue;"><%= data[ids][j]['time'] %></span></p>
+            <% } %>
+          </div>
       <% } %>
     <% } %>
   </div>
